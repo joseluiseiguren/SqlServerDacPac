@@ -29,7 +29,6 @@
     <DacVersion>1.0.0.2</DacVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>bin\Release\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <DebugType>pdbonly</DebugType>
@@ -38,9 +37,10 @@
     <DefineTrace>true</DefineTrace>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <OutputPath>.\bin\Release\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>.\bin\Debug\</OutputPath>
     <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +57,28 @@
     <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
     <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ghana|AnyCPU' ">
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <OutputPath>.\bin\Ghana\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Congo|AnyCPU' ">
+    <OutputPath>.\bin\Congo\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
   <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
@@ -65,22 +87,32 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="MasterData" />
     <Folder Include="Snapshots" />
+    <Folder Include="MasterData\Ghana" />
+    <Folder Include="MasterData\Congo" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Persons.sql" />
     <Build Include="dbo\Tables\Persons_Status.sql" />
-    <None Include="MasterData\Persons_Status.sql" />
     <Build Include="dbo\Tables\Settings.sql" />
+    <None Include="MasterData\Ghana\Persons_Status.sql" />
+    <None Include="MasterData\Ghana\Settings.sql" />
+    <None Include="Script.PostDeployment.Ghana.sql" />
+    <None Include="Script.PostDeployment.Congo.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DatabaseJOS_DEV.publish.xml" />
     <None Include="DatabaseJOS_QA.publish.xml" />
-    <None Include="MasterData\Settings.sql" />
     <None Include="Snapshots\DatabaseJOS_20190607_19-43-52.dacpac" />
     <None Include="Snapshots\DatabaseJOS_20190607_20-05-34.dacpac" />
+    <None Include="MasterData\Congo\Persons_Status.sql" />
+    <None Include="MasterData\Congo\Settings.sql" />
+    <None Include="Snapshots\DatabaseJOS_20190608_18-32-31.dacpac" />
   </ItemGroup>
-  <ItemGroup>
-    <PostDeploy Include="Script.PostDeployment.sql" />
+  <ItemGroup Condition=" '$(Configuration)' == 'Ghana' ">
+    <PostDeploy Include="Script.PostDeployment.Ghana.sql" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'Congo' ">
+    <PostDeploy Include="Script.PostDeployment.Congo.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatabaseJOS.refactorlog" />

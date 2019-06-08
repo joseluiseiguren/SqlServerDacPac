@@ -1,13 +1,10 @@
-﻿
--- Reference Data for AddressType 
-MERGE INTO Persons_Status AS Target 
+﻿MERGE INTO Persons_Status AS Target 
 USING (VALUES 
-  (0, N'Undefined'), 
-  (1, N'OK'), 
-  --(2, N'Deleted'),
-  (3, N'yyy'),
-  (4, N'ccc'),
-  (5, N'aaaa')
+  (10, N'Undefined'), 
+  (11, N'OK'), 
+  (12, N'Deleted'),
+  (13, N'yyy'),
+  (14, N'ccc')  
 ) 
 AS Source (id, description) 
 ON Target.id = Source.id 

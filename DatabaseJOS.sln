@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseJOS", "DatabaseJOS\DatabaseJOS.sqlproj", "{49CDDD2A-0ED4-498B-9877-F90464C0A88A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Congo|Any CPU = Congo|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Ghana|Any CPU = Ghana|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Congo|Any CPU.ActiveCfg = Congo|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Congo|Any CPU.Build.0 = Congo|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Congo|Any CPU.Deploy.0 = Congo|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Ghana|Any CPU.ActiveCfg = Ghana|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Ghana|Any CPU.Build.0 = Ghana|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Ghana|Any CPU.Deploy.0 = Ghana|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49CDDD2A-0ED4-498B-9877-F90464C0A88A}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0F11E28-918C-47CB-93DF-2A0BF188314A}
+	EndGlobalSection
+EndGlobal

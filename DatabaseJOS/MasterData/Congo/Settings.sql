@@ -1,8 +1,6 @@
-﻿
--- Reference Data for Settings
-MERGE INTO Settings AS Target 
+﻿MERGE INTO Settings AS Target 
 USING (VALUES 
-  (1, N'\\bnc10\images', 'joseph', GETDATE(), 9999)
+  (1, N'\\bnc10\Congo\images', 'Peter', GETDATE(), 1234)
 ) 
 AS Source (allowdelete, imagespath, userroot, lastmodified,id) 
 ON Target.id = Source.id 
